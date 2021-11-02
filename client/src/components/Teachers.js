@@ -7,12 +7,17 @@ function Teachers() {
         .then((res) => res.json())
         .then((data) => setTeachers(data));
     }, []);
-  
     
   
     return (
         <div>
-        <h1> {teachers} </h1>
+        <h1> 
+          {
+            teachers.map(teacher => (
+              <li key={teacher.id}> {teacher.name} </li>
+            ))
+          } 
+        </h1>
       </div>
     );
 }
