@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Student from "./Student";
 
 function Students() {
     const [students, setStudents] = useState([]);
@@ -10,14 +11,12 @@ function Students() {
     
   
     return (
-        <div>
-        <h1> 
+        <div className="card-container">
           {
             students.map(student => (
-              <li key={student.id}> {student.name} </li>
+            <Student student={student}/>
             ))
-          } 
-        </h1>
+          }  
       </div>
     );
 }
