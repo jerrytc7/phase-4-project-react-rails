@@ -16,7 +16,7 @@ class StudentsController < ApplicationController
 
     def update
         student = Student.find_by(id: params[:id])
-        student.update(params)
+        student.update(student_params)
         render json: student
     rescue ActiveRecord::RecordInvalid => invalid
         render json: { errors: invalid.record.errors }, status: :unprocessable_entity
